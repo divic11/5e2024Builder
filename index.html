@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Build a character for use in Dungeons and Dragons 5th Edition 2024!">
   <meta name="keywords" content="DnD, 27, point, buy, 5e, 2024, 5e2024, characterbuilder, fifth, edition, dungeon, dragon, dungeonsanddragons, D&D">
-  <meta name="author" content="BirddieSoftware">
+  <meta name="author" content="CSB Software">
   <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
   <script src="https://unpkg.com/downloadjs@1.4.7"></script>
   <script src="pdf-edit.js"></script>
@@ -13,6 +13,9 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7415667802447961"crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css" type="text/css"/>
   <title>DnD 5e 2024 Character Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK0LP4TEFD"></script>
 <script>
@@ -23,8 +26,48 @@
   gtag('config', 'G-YK0LP4TEFD');
 </script>
 </head>
-<body class="small-screen-fix"">
+
+<body class="antialiased">
+
+<!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="https://birddie721.github.io/" class="logo">
+                CSB Software
+            </a>
+            <div class="nav-links">
+                <a href="https://birddie721.github.io/games.html">Games</a>
+                <a href="https://birddie721.github.io/apps.html">Apps</a>
+                <a href="https://birddie721.github.io/upcoming.html">Upcoming Projects</a>
+                <a style="display:none;" href="index.html#all-projects">All Projects</a>
+                <a href="https://birddie721.github.io/#about">About Us</a>
+                <a style="display:none;" href="index.html#socials">Socials</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay">
+            <button id="close-mobile-menu" class="close-button">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <a href="games.html" onclick="document.getElementById('mobile-menu').style.display='none'">Games</a>
+            <a href="apps.html" onclick="document.getElementById('mobile-menu').style.display='none'">Apps</a>
+            <a href="upcoming.html" onclick="document.getElementById('mobile-menu').style.display='none'">Upcoming Projects</a>
+            <a style="display:none;" href="index.html#all-projects" onclick="document.getElementById('mobile-menu').style.display='none'">All Projects</a>
+            <a href="index.html#about" onclick="document.getElementById('mobile-menu').style.display='none'">About Us</a>
+            <a style="display:none;" href="index.html#socials" onclick="document.getElementById('mobile-menu').style.display='none'">Socials</a>
+        </div>
+    </header>
 	
+	<div class="small-screen-fix body">
+	<br><br><br>
 	<h1>Dungeons and Dragons 5th Edition 2024 Character Builder</h1>
 
 	<div class="player-form">
@@ -404,16 +447,39 @@
 	</div>
 	
 	
-<footer style="width: 110%; background-color: #333; color: white; text-align: center; padding: 20px 0; margin-top: 80px;">
-  <div style="padding-bottom: 10px; border-bottom: 1px solid #777;">
+<div style="width: 110%; background-color: #333; color: white; text-align: center; padding: 20px 0; margin-top: 80px;">
+  <div style="padding-bottom: 10px;">
     <p>This site is not a replacement for the <em>Dungeons and Dragons</em> Player's Handbook and should only be used as a tool to assist with character creation.</p>
     <p>For more information, visit the <a href="https://dnd.wizards.com/" target="_blank" style="color: #1E90FF;">official Dungeons and Dragons website</a>.</p>
   </div>
-  <div style="padding-top: 10px;">
-    <p>Find me on <a href="https://x.com/BirddieSoftware" target="_blank" style="color: #1E90FF;">Twitter</a> | <a href="https://www.reddit.com/user/Birddie721/" target="_blank" style="color: #1E90FF;">Reddit</a></p>
-    <p>Email: <a href="mailto:birddiesoftware@gmail.com" style="color: #1E90FF;">birddiesoftware@gmail.com</a></p>
   </div>
+  </div>
+    <footer class="footer">
+    <div class="footer-container">
+        <p>&copy; 2025 CSB Software. All rights reserved.</p>
+        <p class="footer-text">Forged in the heart of the mountain.</p>
+    </div>
 </footer>
+<script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.display = 'flex';
+        });
+
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.display = 'none';
+        });
+
+        // Close mobile menu when a link is clicked inside it
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
